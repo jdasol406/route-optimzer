@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>새 앱키 테스트</title>
+</head>
+<body>
+    <h1>새 카카오 앱키 테스트</h1>
+    <p>새로 발급받은 JavaScript 키를 아래에 입력하고 테스트하세요:</p>
+    
+    <input type="text" id="appkey" placeholder="새 JavaScript 키 입력" style="width:400px;padding:10px;margin:10px 0;">
+    <button onclick="testNewKey()" style="padding:10px 20px;">테스트 시작</button>
+    
+    <div id="status" style="margin:20px 0;font-size:18px;"></div>
+    <div id="map" style="width:500px;height:400px;margin:20px 0;background:#f0f0f0;display:none;"></div>
+
+    <script>
+        function testNewKey() {
+            const appkey = document.getElementById('appkey').value.trim();
+            const statusDiv = document.getElementById('status');
+            
+            if (!appkey) {
+                statusDiv.innerHTML = '❌ 앱키를 입력해주세요!';
+                statusDiv.style.color = 'red';
+                return;
+            }
+            
+            statusDiv.innerHTML = '🔄 새 앱키로 테스트 중...';
+            statusDiv.style.color = 'blue';
+            
+            // 기존 스크립트 제거
+            const oldScript = document.querySelector('script[src*="dapi.kakao.com"]');
+            if (oldScript) {
+                oldScript.remove();
+            }
+            
+            // 새 스크립트 로드
+            const script = document.createElement('script');
+            script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${appkey}&libraries=services`;
+            
+            script.onload = function() {
+                statusDiv.innerHTML = '✅ 성공! 새 앱키가 정상 작동합니다!';
+                statusDiv.style.color = 'green';
+                
+                // 지도 생성 테스트
+                setTimeout(() => {
+                    try {
+                        const container = document.getElementById('map');
+                        container.style.display = 'block';
+                        const options = {
+                            center: new kakao.maps.LatLng(37.5665, 126.978),
+                            level: 3
+                        };
+                        const map = new kakao.maps.Map(container, options);
+                        statusDiv.innerHTML += '<br/>🗺️ 지도도 정상 표시됩니다!';
+                    } catch (error) {
+                        statusDiv.innerHTML += '<br/>⚠️ 지도 생성 오류: ' + error.message;
+                    }
+                }, 1000);
+            };
+            
+            script.onerror = function() {
+                statusDiv.innerHTML = '❌ 여전히 403 에러입니다. 도메인 설정을 확인해주세요.';
+                statusDiv.style.color = 'red';
+            };
+            
+            document.head.appendChild(script);
+        }
+    </script>
+</body>
+</html>

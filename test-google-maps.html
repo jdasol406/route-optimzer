@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Google Maps 테스트</title>
+</head>
+<body>
+    <h1>Google Maps API 테스트</h1>
+    <div id="status">Google Maps 로드 중...</div>
+    <div id="map" style="width:500px;height:400px;margin:20px 0;background:#f0f0f0;"></div>
+
+    <script>
+        function initMap() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '✅ Google Maps 로드 성공!';
+            statusDiv.style.color = 'green';
+            
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 37.5665, lng: 126.9780 }, // 서울시청
+                zoom: 13
+            });
+
+            // 마커 추가
+            new google.maps.Marker({
+                position: { lat: 37.5665, lng: 126.9780 },
+                map: map,
+                title: '서울시청'
+            });
+        }
+
+        function onError() {
+            document.getElementById('status').innerHTML = '❌ Google Maps 로드 실패';
+            document.getElementById('status').style.color = 'red';
+        }
+    </script>
+    
+    <!-- Google Maps API (무료 사용 가능) -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dOWTgTjTzWlh6U&callback=initMap&onerror=onError">
+    </script>
+</body>
+</html>

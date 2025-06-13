@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>카카오 지도 API 테스트</title>
+</head>
+<body>
+    <h1>카카오 지도 API 로드 테스트</h1>
+    <div id="status">테스트 중...</div>
+    <div id="map" style="width:500px;height:400px;margin:20px 0;background:#f0f0f0;"></div>
+    <div id="debug"></div>
+
+    <script>
+        const statusDiv = document.getElementById('status');
+        const debugDiv = document.getElementById('debug');
+        
+        function updateStatus(message, color = 'black') {
+            statusDiv.innerHTML = message;
+            statusDiv.style.color = color;
+            console.log(message);
+        }
+        
+        function updateDebug(message) {
+            debugDiv.innerHTML += message + '<br>';
+        }
+
+        // 1단계: 스크립트 로드 테스트
+        updateStatus('1단계: 카카오 스크립트 로드 중...', 'blue');
+        
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://dapi.kakao.com/v2/maps/sdk.js?appkey=132b61badd3c57add574e96e987733c9&libraries=services';
+        
+        script.onload = function() {
+            updateStatus('2단계: 스크립트 로드 성공! 카카오 객체 확인 중...', 'green');
+            updateDebug('✅ 스크립트 로드 성공');
+            
+            setTimeout(() => {
+                if (window.kakao) {
+                    updateDebug('✅ window.kakao 존재');
+                    
+                    if (window.kakao.maps) {
+                        updateDebug('✅ window.kakao.maps 존재');
+                        
+                        // 지도 생성 테스트
+                        try {
+                            const container = document.getElementById('map');
+                            const options = {
+                                center: new kakao.maps.LatLng(37.5665, 126.978),
+                                level: 3
+                            };
+                            const map = new kakao.maps.Map(container, options);
+                            updateStatus('3단계: 지도 생성 성공!', 'green');
+                            updateDebug('✅ 지도 생성 성공');
+                            
+                            // 서비스 테스트
+                            if (window.kakao.maps.services) {
+                                updateDebug('✅ services 객체 존재');
+                                const geocoder = new kakao.maps.services.Geocoder();
+                                updateStatus('✅ 모든 테스트 통과! API가 정상 작동합니다.', 'green');
+                            } else {
+                                updateStatus('⚠️ services 객체가 없습니다.', 'orange');
+                                updateDebug('❌ services 객체 없음');
+                            }
+                        } catch (error) {
+                            updateStatus('❌ 지도 생성 실패: ' + error.message, 'red');
+                            updateDebug('❌ 지도 생성 오류: ' + error.message);
+                        }
+                    } else {
+                        updateStatus('❌ kakao.maps 객체가 없습니다.', 'red');
+                        updateDebug('❌ window.kakao.maps 없음');
+                    }
+                } else {
+                    updateStatus('❌ kakao 객체가 없습니다.', 'red');
+                    updateDebug('❌ window.kakao 없음');
+                }
+            }, 1000);
+        };
+        
+        script.onerror = function(error) {
+            updateStatus('❌ 스크립트 로드 실패 - 403 Forbidden 에러', 'red');
+            updateDebug('❌ 스크립트 로드 실패');
+            updateDebug('현재 URL: ' + window.location.href);
+            updateDebug('에러: ' + JSON.stringify(error));
+            updateDebug('해결방법: 카카오 개발자센터에서 현재 도메인을 정확히 등록해주세요.');
+        };
+        
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
