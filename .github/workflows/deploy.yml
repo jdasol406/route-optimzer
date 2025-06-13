@@ -25,9 +25,9 @@ jobs:
 
       - name: Build
         run: npm run build # yarn 사용시 'yarn build'
-        env:
-          # Vite 환경변수들 (필요시 추가)
-          # VITE_API_URL: ${{ secrets.VITE_API_URL }}
+        # env:
+        # Vite 환경변수들 (필요시 추가)
+        # VITE_API_URL: ${{ secrets.VITE_API_URL }}
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
