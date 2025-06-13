@@ -123,9 +123,9 @@ const KakaoMap = ({ addresses, startLocation, endLocation, isOptimized, optimize
       
       const imageSrc = `data:image/svg+xml;base64,${btoa(`
         <svg width="35" height="45" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="17.5" cy="17.5" r="15" fill="#28A745" stroke="white" stroke-width="3"/>
+          <circle cx="17.5" cy="17.5" r="15" fill="#16a34a" stroke="white" stroke-width="3"/>
           <text x="17.5" y="25" text-anchor="middle" fill="white" font-size="16" font-weight="bold">S</text>
-          <polygon points="17.5,30 10,42 25,42" fill="#28A745"/>
+          <polygon points="17.5,30 10,42 25,42" fill="#16a34a"/>
         </svg>
       `)}`;
 
@@ -141,7 +141,7 @@ const KakaoMap = ({ addresses, startLocation, endLocation, isOptimized, optimize
 
       const infoContent = `
         <div style="padding:10px;font-size:13px;max-width:200px;text-align:center;">
-          <strong style="color:#28A745;">🚩 출발지</strong><br/>
+          <strong style="color:#16a34a;">🚩 출발지</strong><br/>
           ${startLocation.name || '출발지'}<br/>
           <small style="color:#666;">${startLocation.address}</small>
         </div>
@@ -162,9 +162,9 @@ const KakaoMap = ({ addresses, startLocation, endLocation, isOptimized, optimize
 
       const imageSrc = `data:image/svg+xml;base64,${btoa(`
         <svg width="30" height="40" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="15" cy="15" r="12" fill="#FFC107" stroke="white" stroke-width="2"/>
-          <text x="15" y="20" text-anchor="middle" fill="black" font-size="12" font-weight="bold">${index + 1}</text>
-          <polygon points="15,25 10,35 20,35" fill="#FFC107"/>
+          <circle cx="15" cy="15" r="12" fill="#d97706" stroke="white" stroke-width="2"/>
+          <text x="15" y="20" text-anchor="middle" fill="white" font-size="12" font-weight="bold">${index + 1}</text>
+          <polygon points="15,25 10,35 20,35" fill="#d97706"/>
         </svg>
       `)}`;
 
@@ -180,7 +180,7 @@ const KakaoMap = ({ addresses, startLocation, endLocation, isOptimized, optimize
 
       const infoContent = `
         <div style="padding:8px;font-size:12px;max-width:200px;text-align:center;">
-          <strong style="color:#FFC107;">📍 ${index + 1}번째 경유지</strong><br/>
+          <strong style="color:#d97706;">📍 ${index + 1}번째 경유지</strong><br/>
           ${addr.name}<br/>
           <small style="color:#666;">${addr.address}</small>
         </div>
@@ -201,9 +201,9 @@ const KakaoMap = ({ addresses, startLocation, endLocation, isOptimized, optimize
       
       const imageSrc = `data:image/svg+xml;base64,${btoa(`
         <svg width="35" height="45" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="17.5" cy="17.5" r="15" fill="#DC3545" stroke="white" stroke-width="3"/>
+          <circle cx="17.5" cy="17.5" r="15" fill="#dc2626" stroke="white" stroke-width="3"/>
           <text x="17.5" y="25" text-anchor="middle" fill="white" font-size="16" font-weight="bold">E</text>
-          <polygon points="17.5,30 10,42 25,42" fill="#DC3545"/>
+          <polygon points="17.5,30 10,42 25,42" fill="#dc2626"/>
         </svg>
       `)}`;
 
@@ -219,7 +219,7 @@ const KakaoMap = ({ addresses, startLocation, endLocation, isOptimized, optimize
 
       const infoContent = `
         <div style="padding:10px;font-size:13px;max-width:200px;text-align:center;">
-          <strong style="color:#DC3545;">🏁 도착지</strong><br/>
+          <strong style="color:#dc2626;">🏁 도착지</strong><br/>
           ${endLocation.name || '도착지'}<br/>
           <small style="color:#666;">${endLocation.address}</small>
         </div>
@@ -797,7 +797,7 @@ function App() {
               style={{
                 flex: 1,
                 padding: '8px',
-                backgroundColor: '#dcfce7',
+                backgroundColor: '#f0fdf4',
                 color: '#16a34a',
                 border: '1px solid #16a34a',
                 borderRadius: '4px',
@@ -816,9 +816,9 @@ function App() {
               style={{
                 flex: 1,
                 padding: '8px',
-                backgroundColor: '#fefce8',
-                color: '#ca8a04',
-                border: '1px solid #ca8a04',
+                backgroundColor: '#fffbeb',
+                color: '#d97706',
+                border: '1px solid #d97706',
                 borderRadius: '4px',
                 cursor: (isSearching || !addressInput.trim()) ? 'not-allowed' : 'pointer',
                 fontSize: '12px',
@@ -835,7 +835,7 @@ function App() {
               style={{
                 flex: 1,
                 padding: '8px',
-                backgroundColor: '#fee2e2',
+                backgroundColor: '#fef2f2',
                 color: '#dc2626',
                 border: '1px solid #dc2626',
                 borderRadius: '4px',
@@ -933,7 +933,7 @@ function App() {
                       <button
                         onClick={() => removeFromFavorites(favorite.id)}
                         style={{
-                          background: '#fee2e2',
+                          background: '#fef2f2',
                           color: '#dc2626',
                           border: '1px solid #dc2626',
                           borderRadius: '4px',
@@ -954,7 +954,7 @@ function App() {
                         style={{
                           flex: 1,
                           padding: '6px',
-                          backgroundColor: '#dcfce7',
+                          backgroundColor: '#f0fdf4',
                           color: '#16a34a',
                           border: '1px solid #16a34a',
                           borderRadius: '4px',
@@ -970,9 +970,9 @@ function App() {
                         style={{
                           flex: 1,
                           padding: '6px',
-                          backgroundColor: '#fefce8',
-                          color: '#ca8a04',
-                          border: '1px solid #ca8a04',
+                          backgroundColor: '#fffbeb',
+                          color: '#d97706',
+                          border: '1px solid #d97706',
                           borderRadius: '4px',
                           cursor: 'pointer',
                           fontSize: '11px',
@@ -986,7 +986,7 @@ function App() {
                         style={{
                           flex: 1,
                           padding: '6px',
-                          backgroundColor: '#fee2e2',
+                          backgroundColor: '#fef2f2',
                           color: '#dc2626',
                           border: '1px solid #dc2626',
                           borderRadius: '4px',
@@ -1039,7 +1039,7 @@ function App() {
                       style={{
                         flex: 1,
                         padding: '4px',
-                        backgroundColor: '#dcfce7',
+                        backgroundColor: '#f0fdf4',
                         color: '#16a34a',
                         border: '1px solid #16a34a',
                         borderRadius: '3px',
@@ -1055,9 +1055,9 @@ function App() {
                       style={{
                         flex: 1,
                         padding: '4px',
-                        backgroundColor: '#fefce8',
-                        color: '#ca8a04',
-                        border: '1px solid #ca8a04',
+                        backgroundColor: '#fffbeb',
+                        color: '#d97706',
+                        border: '1px solid #d97706',
                         borderRadius: '3px',
                         cursor: 'pointer',
                         fontSize: '10px',
@@ -1071,7 +1071,7 @@ function App() {
                       style={{
                         flex: 1,
                         padding: '4px',
-                        backgroundColor: '#fee2e2',
+                        backgroundColor: '#fef2f2',
                         color: '#dc2626',
                         border: '1px solid #dc2626',
                         borderRadius: '3px',
@@ -1144,9 +1144,9 @@ function App() {
             <div style={{
               padding: '10px',
               margin: '5px 0',
-              backgroundColor: '#e8f5e8',
+              backgroundColor: '#f0fdf4',
               borderRadius: '5px',
-              border: '2px solid #28a745',
+              border: '2px solid #16a34a',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center'
@@ -1157,7 +1157,7 @@ function App() {
               <button
                 onClick={clearStartLocation}
                 style={{
-                  background: '#fee2e2',
+                  background: '#fef2f2',
                   color: '#dc2626',
                   border: '1px solid #dc2626',
                   borderRadius: '3px',
@@ -1182,7 +1182,7 @@ function App() {
                 <div key={addr.id} style={{
                   padding: '8px',
                   margin: '3px 0',
-                  backgroundColor: isOptimized ? '#fff3cd' : '#f8f9fa',
+                  backgroundColor: isOptimized ? '#fffbeb' : '#f8f9fa',
                   borderRadius: '4px',
                   display: 'flex',
                   justifyContent: 'space-between',
@@ -1195,7 +1195,7 @@ function App() {
                   <button
                     onClick={() => removeAddress(addr.id)}
                     style={{
-                      background: '#fee2e2',
+                      background: '#fef2f2',
                       color: '#dc2626',
                       border: '1px solid #dc2626',
                       borderRadius: '3px',
@@ -1217,9 +1217,9 @@ function App() {
             <div style={{
               padding: '10px',
               margin: '5px 0',
-              backgroundColor: '#ffeaea',
+              backgroundColor: '#fef2f2',
               borderRadius: '5px',
-              border: '2px solid #dc3545',
+              border: '2px solid #dc2626',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center'
@@ -1230,7 +1230,7 @@ function App() {
               <button
                 onClick={clearEndLocation}
                 style={{
-                  background: '#fee2e2',
+                  background: '#fef2f2',
                   color: '#dc2626',
                   border: '1px solid #dc2626',
                   borderRadius: '3px',
@@ -1279,9 +1279,9 @@ function App() {
                 style={{
                   flex: 1,
                   padding: '8px',
-                  backgroundColor: '#fefce8',
-                  color: '#ca8a04',
-                  border: '1px solid #ca8a04',
+                  backgroundColor: '#fffbeb',
+                  color: '#d97706',
+                  border: '1px solid #d97706',
                   borderRadius: '4px',
                   cursor: 'pointer',
                   fontSize: '12px',
@@ -1301,7 +1301,7 @@ function App() {
                   padding: '8px',
                   backgroundColor: isCalculating 
                     ? '#f9fafb' 
-                    : (isOptimized ? '#eff6ff' : '#dcfce7'),
+                    : (isOptimized ? '#eff6ff' : '#f0fdf4'),
                   color: isCalculating 
                     ? '#4b5563' 
                     : (isOptimized ? '#2563eb' : '#16a34a'),
@@ -1324,10 +1324,10 @@ function App() {
         {message && (
           <div style={{
             padding: '10px',
-            backgroundColor: message.includes('오류') || message.includes('이미') || message.includes('찾을 수 없습니다') ? '#f8d7da' : 
-                           message.includes('완료') || message.includes('추가') || message.includes('설정') || message.includes('삭제') ? '#d4edda' : '#fff3cd',
-            color: message.includes('오류') || message.includes('이미') || message.includes('찾을 수 없습니다') ? '#721c24' : 
-                   message.includes('완료') || message.includes('추가') || message.includes('설정') || message.includes('삭제') ? '#155724' : '#856404',
+            backgroundColor: message.includes('오류') || message.includes('이미') || message.includes('찾을 수 없습니다') ? '#fef2f2' : 
+                           message.includes('완료') || message.includes('추가') || message.includes('설정') || message.includes('삭제') ? '#f0fdf4' : '#fffbeb',
+            color: message.includes('오류') || message.includes('이미') || message.includes('찾을 수 없습니다') ? '#dc2626' : 
+                   message.includes('완료') || message.includes('추가') || message.includes('설정') || message.includes('삭제') ? '#16a34a' : '#d97706',
             borderRadius: '5px',
             fontSize: '13px',
             textAlign: 'center',
@@ -1353,6 +1353,11 @@ function App() {
           4. 📍 경유지 1개 이상 필수<br/>
           5. 🏁 도착지 (선택사항)<br/>
           6. 🚀 최적화로 경로 계산<br/>
+          <br/>
+          <strong>🗺️ 지도 마커:</strong><br/>
+          • <strong>S</strong> = Start (출발지)<br/>
+          • <strong>E</strong> = End (도착지)<br/>
+          • <strong>숫자</strong> = 경유지 순서 (1, 2, 3...)<br/>
           <small style={{ color: '#666' }}>
             * 도로 계수 1.4배 적용된 실제 거리 추정<br/>
             * 즐겨찾기는 브라우저 세션 동안만 유지됩니다

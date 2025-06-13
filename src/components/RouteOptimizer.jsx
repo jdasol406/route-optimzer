@@ -9,22 +9,28 @@ const OptimizeContainer = styled.div`
 
 const Button = styled.button`
   padding: 15px;
-  background-color: ${props => props.primary ? '#28a745' : '#17a2b8'};
-  color: white;
-  border: none;
+  background-color: ${props => props.primary ? '#f0fdf4' : '#eff6ff'};
+  color: ${props => props.primary ? '#16a34a' : '#2563eb'};
+  border: 1px solid ${props => props.primary ? '#16a34a' : '#2563eb'};
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 
   &:hover {
-    background-color: ${props => props.primary ? '#218838' : '#138496'};
+    background-color: ${props => props.primary ? '#dcfce7' : '#dbeafe'};
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   &:disabled {
-    background-color: #6c757d;
+    background-color: #f9fafb;
+    color: #6b7280;
+    border-color: #6b7280;
     cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
   }
 `;
 
