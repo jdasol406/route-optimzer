@@ -797,12 +797,13 @@ function App() {
               style={{
                 flex: 1,
                 padding: '8px',
-                backgroundColor: '#28a745',
-                color: 'white',
-                border: 'none',
+                backgroundColor: '#dcfce7',
+                color: '#16a34a',
+                border: '1px solid #16a34a',
                 borderRadius: '4px',
                 cursor: (isSearching || !addressInput.trim()) ? 'not-allowed' : 'pointer',
                 fontSize: '12px',
+                fontWeight: 'bold',
                 opacity: (isSearching || !addressInput.trim()) ? 0.6 : 1
               }}
             >
@@ -815,12 +816,13 @@ function App() {
               style={{
                 flex: 1,
                 padding: '8px',
-                backgroundColor: '#ffc107',
-                color: 'black',
-                border: 'none',
+                backgroundColor: '#fefce8',
+                color: '#ca8a04',
+                border: '1px solid #ca8a04',
                 borderRadius: '4px',
                 cursor: (isSearching || !addressInput.trim()) ? 'not-allowed' : 'pointer',
                 fontSize: '12px',
+                fontWeight: 'bold',
                 opacity: (isSearching || !addressInput.trim()) ? 0.6 : 1
               }}
             >
@@ -833,12 +835,13 @@ function App() {
               style={{
                 flex: 1,
                 padding: '8px',
-                backgroundColor: '#dc3545',
-                color: 'white',
-                border: 'none',
+                backgroundColor: '#fee2e2',
+                color: '#dc2626',
+                border: '1px solid #dc2626',
                 borderRadius: '4px',
                 cursor: (isSearching || !addressInput.trim()) ? 'not-allowed' : 'pointer',
                 fontSize: '12px',
+                fontWeight: 'bold',
                 opacity: (isSearching || !addressInput.trim()) ? 0.6 : 1
               }}
             >
@@ -853,9 +856,9 @@ function App() {
               style={{
                 flex: 1,
                 padding: '8px',
-                backgroundColor: '#6f42c1',
-                color: 'white',
-                border: 'none',
+                backgroundColor: '#f3f0ff',
+                color: '#7c3aed',
+                border: '1px solid #7c3aed',
                 borderRadius: '4px',
                 cursor: (isSearching || !addressInput.trim()) ? 'not-allowed' : 'pointer',
                 fontSize: '12px',
@@ -871,12 +874,13 @@ function App() {
               style={{
                 flex: 1,
                 padding: '8px',
-                backgroundColor: showFavorites ? '#17a2b8' : '#6c757d',
-                color: 'white',
-                border: 'none',
+                backgroundColor: showFavorites ? '#eff6ff' : '#f9fafb',
+                color: showFavorites ? '#2563eb' : '#4b5563',
+                border: showFavorites ? '1px solid #2563eb' : '1px solid #4b5563',
                 borderRadius: '4px',
                 cursor: 'pointer',
-                fontSize: '12px'
+                fontSize: '12px',
+                fontWeight: 'bold'
               }}
             >
               {showFavorites ? '📝 입력창' : '⭐ 즐겨찾기'}
@@ -929,13 +933,14 @@ function App() {
                       <button
                         onClick={() => removeFromFavorites(favorite.id)}
                         style={{
-                          background: '#dc3545',
-                          color: 'white',
-                          border: 'none',
+                          background: '#fee2e2',
+                          color: '#dc2626',
+                          border: '1px solid #dc2626',
                           borderRadius: '4px',
                           padding: '4px 8px',
                           cursor: 'pointer',
                           fontSize: '11px',
+                          fontWeight: 'bold',
                           marginLeft: '10px'
                         }}
                       >
@@ -949,12 +954,13 @@ function App() {
                         style={{
                           flex: 1,
                           padding: '6px',
-                          backgroundColor: '#28a745',
-                          color: 'white',
-                          border: 'none',
+                          backgroundColor: '#dcfce7',
+                          color: '#16a34a',
+                          border: '1px solid #16a34a',
                           borderRadius: '4px',
                           cursor: 'pointer',
-                          fontSize: '11px'
+                          fontSize: '11px',
+                          fontWeight: 'bold'
                         }}
                       >
                         🚩 출발지
@@ -964,12 +970,13 @@ function App() {
                         style={{
                           flex: 1,
                           padding: '6px',
-                          backgroundColor: '#ffc107',
-                          color: 'black',
-                          border: 'none',
+                          backgroundColor: '#fefce8',
+                          color: '#ca8a04',
+                          border: '1px solid #ca8a04',
                           borderRadius: '4px',
                           cursor: 'pointer',
-                          fontSize: '11px'
+                          fontSize: '11px',
+                          fontWeight: 'bold'
                         }}
                       >
                         📍 경유지
@@ -979,12 +986,13 @@ function App() {
                         style={{
                           flex: 1,
                           padding: '6px',
-                          backgroundColor: '#dc3545',
-                          color: 'white',
-                          border: 'none',
+                          backgroundColor: '#fee2e2',
+                          color: '#dc2626',
+                          border: '1px solid #dc2626',
                           borderRadius: '4px',
                           cursor: 'pointer',
-                          fontSize: '11px'
+                          fontSize: '11px',
+                          fontWeight: 'bold'
                         }}
                       >
                         🏁 도착지
@@ -1031,12 +1039,13 @@ function App() {
                       style={{
                         flex: 1,
                         padding: '4px',
-                        backgroundColor: '#28a745',
-                        color: 'white',
-                        border: 'none',
+                        backgroundColor: '#dcfce7',
+                        color: '#16a34a',
+                        border: '1px solid #16a34a',
                         borderRadius: '3px',
                         cursor: 'pointer',
-                        fontSize: '10px'
+                        fontSize: '10px',
+                        fontWeight: 'bold'
                       }}
                     >
                       🚩
@@ -1046,12 +1055,13 @@ function App() {
                       style={{
                         flex: 1,
                         padding: '4px',
-                        backgroundColor: '#ffc107',
-                        color: 'black',
-                        border: 'none',
+                        backgroundColor: '#fefce8',
+                        color: '#ca8a04',
+                        border: '1px solid #ca8a04',
                         borderRadius: '3px',
                         cursor: 'pointer',
-                        fontSize: '10px'
+                        fontSize: '10px',
+                        fontWeight: 'bold'
                       }}
                     >
                       📍
@@ -1061,12 +1071,13 @@ function App() {
                       style={{
                         flex: 1,
                         padding: '4px',
-                        backgroundColor: '#dc3545',
-                        color: 'white',
-                        border: 'none',
+                        backgroundColor: '#fee2e2',
+                        color: '#dc2626',
+                        border: '1px solid #dc2626',
                         borderRadius: '3px',
                         cursor: 'pointer',
-                        fontSize: '10px'
+                        fontSize: '10px',
+                        fontWeight: 'bold'
                       }}
                     >
                       🏁
@@ -1101,9 +1112,9 @@ function App() {
                 style={{
                   marginTop: '15px',
                   padding: '8px 16px',
-                  backgroundColor: '#6f42c1',
-                  color: 'white',
-                  border: 'none',
+                  backgroundColor: '#f3f0ff',
+                  color: '#7c3aed',
+                  border: '1px solid #7c3aed',
                   borderRadius: '4px',
                   cursor: 'pointer',
                   fontSize: '12px',
@@ -1146,13 +1157,14 @@ function App() {
               <button
                 onClick={clearStartLocation}
                 style={{
-                  background: '#dc3545',
-                  color: 'white',
-                  border: 'none',
+                  background: '#fee2e2',
+                  color: '#dc2626',
+                  border: '1px solid #dc2626',
                   borderRadius: '3px',
                   padding: '5px 8px',
                   cursor: 'pointer',
-                  fontSize: '12px'
+                  fontSize: '12px',
+                  fontWeight: 'bold'
                 }}
               >
                 삭제
@@ -1183,13 +1195,14 @@ function App() {
                   <button
                     onClick={() => removeAddress(addr.id)}
                     style={{
-                      background: '#dc3545',
-                      color: 'white',
-                      border: 'none',
+                      background: '#fee2e2',
+                      color: '#dc2626',
+                      border: '1px solid #dc2626',
                       borderRadius: '3px',
                       padding: '3px 6px',
                       cursor: 'pointer',
-                      fontSize: '11px'
+                      fontSize: '11px',
+                      fontWeight: 'bold'
                     }}
                   >
                     삭제
@@ -1217,13 +1230,14 @@ function App() {
               <button
                 onClick={clearEndLocation}
                 style={{
-                  background: '#dc3545',
-                  color: 'white',
-                  border: 'none',
+                  background: '#fee2e2',
+                  color: '#dc2626',
+                  border: '1px solid #dc2626',
                   borderRadius: '3px',
                   padding: '5px 8px',
                   cursor: 'pointer',
-                  fontSize: '12px'
+                  fontSize: '12px',
+                  fontWeight: 'bold'
                 }}
               >
                 삭제
@@ -1246,12 +1260,13 @@ function App() {
                 style={{
                   flex: 1,
                   padding: '8px',
-                  backgroundColor: '#6c757d',
-                  color: 'white',
-                  border: 'none',
+                  backgroundColor: '#f9fafb',
+                  color: '#4b5563',
+                  border: '1px solid #4b5563',
                   borderRadius: '4px',
                   cursor: 'pointer',
-                  fontSize: '12px'
+                  fontSize: '12px',
+                  fontWeight: 'bold'
                 }}
               >
                 전체 삭제
@@ -1264,12 +1279,13 @@ function App() {
                 style={{
                   flex: 1,
                   padding: '8px',
-                  backgroundColor: '#ffc107',
-                  color: 'black',
-                  border: 'none',
+                  backgroundColor: '#fefce8',
+                  color: '#ca8a04',
+                  border: '1px solid #ca8a04',
                   borderRadius: '4px',
                   cursor: 'pointer',
-                  fontSize: '12px'
+                  fontSize: '12px',
+                  fontWeight: 'bold'
                 }}
               >
                 경유지만 삭제
@@ -1283,9 +1299,15 @@ function App() {
                 style={{
                   flex: 1,
                   padding: '8px',
-                  backgroundColor: isCalculating ? '#6c757d' : (isOptimized ? '#17a2b8' : '#28a745'),
-                  color: 'white',
-                  border: 'none',
+                  backgroundColor: isCalculating 
+                    ? '#f9fafb' 
+                    : (isOptimized ? '#eff6ff' : '#dcfce7'),
+                  color: isCalculating 
+                    ? '#4b5563' 
+                    : (isOptimized ? '#2563eb' : '#16a34a'),
+                  border: isCalculating 
+                    ? '1px solid #4b5563' 
+                    : (isOptimized ? '1px solid #2563eb' : '1px solid #16a34a'),
                   borderRadius: '4px',
                   cursor: isCalculating ? 'not-allowed' : 'pointer',
                   fontSize: '12px',
