@@ -36,4 +36,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: route-optimzer # Cloudflare Pages 프로젝트 이름
           directory: dist # Vite는 dist 폴더에 빌드 결과물 생성
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          # gitHubToken: ${{ secrets.GITHUB_TOKEN }}
